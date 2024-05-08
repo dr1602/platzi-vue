@@ -1,82 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>HTML + CSS</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Vite + Vue + TS</title>
   </head>
   <body>
-    <div id="root">
-      <h2>Peliculas</h2>
-
-      <form v-for='movie in movies'>
-        <h3> {{ movie.name }} <h3/>
-          <button 
-            type="button" 
-            v-on:click='movie.quantity -= 1'
-            :disabled='movie.quantity <= 0'
-            
-          > - </button>
-          {{ movie.quantity }}
-          <button 
-            type="button" 
-            v-on:click='movie.quantity += 1'
-            :disabled='movie.quantity >= movie.maxTickets'
-          > + </button>
-      </form>
-    </div>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
-
-  <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.js"></script>
-  <script>
-    const { createApp } = Vue;
-
-    const app = createApp({
-      data() {
-        return{
-          movies: [
-            {
-              name: 'Revengers',
-              maxTickets: 12,
-              quantity: 0,
-            },
-            {
-              name: 'Spuder Moon',
-              maxTickets: 10,
-              quantity: 0,
-            },
-            {
-              name: 'Baturu Man',
-              maxTickets: 8,
-              quantity: 0,
-            },
-            {
-              name: 'Journey Rabbit',
-              maxTickets: 2,
-              quantity: 0,
-            },
-            {
-              name: 'Blue Penter',
-              maxTickets: 3,
-              quantity: 0,
-            },
-            {
-              name: 'River Gens, Mid Game',
-              maxTickets: 5,
-              quantity: 0,
-            },
-            {
-              name: 'Finally, The One Piece',
-              maxTickets: 10,
-              quantity: 0,
-            },
-          ],
-        };
-      }
-    });
-
-    app.mount("#root");
-  </script>
 </html>
