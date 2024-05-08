@@ -1,18 +1,21 @@
 {
-  "name": "html-css",
-  "version": "1.0.0",
-  "description": "A template for HTML and CSS",
-  "main": "index.html",
+  "name": "vue-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "serve"
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
   },
-  "keywords": [
-    "html",
-    "css"
-  ],
-  "author": "Ives van Hoorne",
-  "license": "MIT",
+  "dependencies": {
+    "vue": "^3.4.15"
+  },
   "devDependencies": {
-    "serve": "11.2.0"
+    "@vitejs/plugin-vue": "^4.6.2",
+    "sass": "^1.74.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.12",
+    "vue-tsc": "^1.8.27"
   }
 }
